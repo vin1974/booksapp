@@ -1,0 +1,31 @@
+get http://localhost:4004/odata/v4/library-srv
+
+###
+get http://localhost:4004/odata/v4/library-srv/BooksSet
+
+###
+get http://localhost:4004/odata/v4/library-srv/BooksSet(550e8400-e29b-41d4-a716-446655440004)
+
+###
+POST http://localhost:4004/odata/v4/library-srv/BooksSet
+Content-Type: application/json
+
+{
+  "title": "Book 3",
+  "author": "Yaong",
+  "isn": "9780321125888",
+  "price": "11.11",
+  "publishDate": "2026-08-29T00:00:00Z"
+}
+
+###
+PATCH http://localhost:4004/odata/v4/library-srv/BooksSet(550e8400-e29b-41d4-a716-446655440004)
+Content-Type: application/json
+
+{
+  "title": "Yaong is Cat",
+  "author": "Cat Together"
+}
+
+### 
+DELETE http://localhost:4004/odata/v4/library-srv/BooksSet(550e8400-e29b-41d4-a716-446655440003)
